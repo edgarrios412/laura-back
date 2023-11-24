@@ -1,4 +1,4 @@
-const {User} = require("../db")
+const {User, Categoria} = require("../db")
 const jwt = require("jsonwebtoken")
 
 module.exports = {
@@ -60,5 +60,13 @@ module.exports = {
         const user = await User.findOne({where:{id:id}})
         await user.destroy()
         return "Usuario eliminado"
+    },
+    newCate: async (data) => {
+        await Categoria.create(data)
+        return "Exitoso"
+    },
+    getCate: async (data) => {
+        const cate = await Categoria.findAll()
+        return cate
     }
 }
