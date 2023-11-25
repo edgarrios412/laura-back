@@ -1,4 +1,4 @@
-const {User, Categoria} = require("../db")
+const {User, Categoria, Procedimientos} = require("../db")
 const jwt = require("jsonwebtoken")
 
 module.exports = {
@@ -65,8 +65,16 @@ module.exports = {
         await Categoria.create(data)
         return "Exitoso"
     },
-    getCate: async (data) => {
+    getCate: async () => {
         const cate = await Categoria.findAll()
         return cate
+    },
+    getProce: async () => {
+        const cate = await Procedimientos.findAll()
+        return cate
+    },
+    postProce: async (data) => {
+        const cate = await Procedimientos.create(data)
+        return "Creado con exito"
     }
 }
