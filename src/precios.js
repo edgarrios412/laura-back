@@ -1,6 +1,5 @@
 const precios = [
-{label:"Prevencion - Valoración",	value:30000},
-{label:"labeBozo",	value:
+{label:"Bozo",	value:
 5000},
 {label:"Diseño y depilacion ",	value:
 15000},
