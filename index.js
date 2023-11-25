@@ -3,7 +3,7 @@ const {conn} = require("./src/db")
 const {Procedimientos} = require("./src/db")
 const precios = require("./src/precios.js")
 
-conn.sync({force:true}).then(() => {
+conn.sync({alter:true}).then(() => {
     console.log("Conectado a la base de datos")
     Procedimientos.findAll()
     .then((data) => {
