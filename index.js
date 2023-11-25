@@ -6,7 +6,7 @@ const precios = require("./src/precios.js")
 conn.sync({force:true}).then(() => {
     console.log("Conectado a la base de datos")
     Procedimientos.findAll()
-    .then(({data}) => {
+    .then((data) => {
         if(!data.length){
             Procedimientos.bulkCreate(precios).then(() => {
                 console.log("Procedimientos creados con exito")
