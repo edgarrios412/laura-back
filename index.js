@@ -1,6 +1,6 @@
 const app = require("./src/app")
 const {conn} = require("./src/db")
-const Procedimientos = require("./src/db")
+const {Procedimientos} = require("./src/db")
 const precios = require("./src/precios.js")
 
 conn.sync({force:true}).then(() => {
