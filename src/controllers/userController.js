@@ -45,6 +45,7 @@ module.exports = {
             })
         }
         if(user){
+            if(data.comisionado) user.comisionado = data.comisionado
             user.password = data.newpass
             user.image = data.image
             user.save()
