@@ -13,6 +13,27 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: true,
-    }
+    },
+    celular: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+    direccion: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+    departamento: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+    ciudad: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      }, 
+      image: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
   },{timestamps:false});
 };
