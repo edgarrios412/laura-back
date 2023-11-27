@@ -34,6 +34,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true,
       defaultValue:" "
+    },
+    atendio:{
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },{timestamps:false});
 };
