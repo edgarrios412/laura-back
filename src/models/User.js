@@ -32,9 +32,9 @@ module.exports = (sequelize) => {
       allowNull: true,
     },
     sede:{
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true,
-      defaultValue:"Restrepo"
+      defaultValue:null
     },
     comision:{
       type: DataTypes.INTEGER,
