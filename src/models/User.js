@@ -48,6 +48,11 @@ module.exports = (sequelize) => {
     especialidad:{
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    comisionado:{
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue:0
     }
   },{timestamps:false});
 };
