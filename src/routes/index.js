@@ -5,6 +5,7 @@ const calendarRoutes = require("./calendarRoutes")
 const financieroRoutes = require("./financieroRoutes")
 const temperaturaRoutes = require("./temperaturaRoutes")
 const evolucionRoutes = require("./evolucionRoutes")
+const proveedorRoutes = require("./proveedorRoutes")
 const indexRoutes = Router()
 
 indexRoutes.use("/user",userRoutes)
@@ -13,5 +14,6 @@ indexRoutes.use("/client",clientRoutes)
 indexRoutes.use("/financiero",financieroRoutes)
 indexRoutes.use("/temperatura",temperaturaRoutes)
 indexRoutes.use("/evolucion",evolucionRoutes)
+indexRoutes.use("/proveedor",proveedorRoutes)
 
 module.exports = indexRoutes
