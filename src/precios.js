@@ -29,6 +29,10 @@ const precios = [
 350000},
 {label:"Micropigmentación Labios",	value:
 350000},
+{label:"Retoque Micropigmentación Labios",	value:
+0},
+{label:"Retoque Micropigmentación Cejas",	value:
+0},
 ]
 
 module.exports = precios
