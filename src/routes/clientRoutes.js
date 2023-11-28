@@ -25,8 +25,8 @@ clientRoutes.get("/:id", async (req,res) => {
 
 clientRoutes.delete("/:id", async (req,res) => {
     try{
-        const deleteClient = await deleteClient(req.params.id)
-        res.json(deleteClient)
+        const client = await deleteClient(req.params.id)
+        res.json(client)
     }
     catch(error){
         console.log(error)
