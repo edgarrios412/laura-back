@@ -19,12 +19,18 @@ module.exports = {
         return client
     },
     deleteClient: async (id) => {
-        const client = Client.findOne({where:{id:id}})
-        if(client){
-            await client.destroy()
-            return "Cliente eliminado"
-        }else{
-            return "No se consigue el cliente"
+        try {
+            const client = await Client.findOne({ where: { id: id } });
+            
+            if (client) {
+                await client.destroy();
+                return "Cliente eliminado";
+            } else {
+                return "No se encuentra el cliente";
+            }
+        } catch (error) {
+            console.error("Error al eliminar el cliente:", error);
+            return "Error al eliminar el cliente";
         }
     },
     createClient: async (data) => {
