@@ -23,7 +23,7 @@ module.exports = (sequelize) => {
       allowNull: true,
     },
     tipo: {
-      type: DataTypes.ENUM("Bancolombia","TDC","Efectivo"),
+      type: DataTypes.STRING,
       // allowNull: true,
     },
     comprobante:{
