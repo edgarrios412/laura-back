@@ -38,6 +38,10 @@ module.exports = (sequelize) => {
     atendio:{
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    factura:{
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
     }
   },{timestamps:false});
 };
