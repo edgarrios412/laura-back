@@ -18,6 +18,15 @@ module.exports = {
         ]})
         return client
     },
+    deleteClient: async (id) => {
+        const client = Client.findOne({where:{id:id}})
+        if(client){
+            await client.destroy()
+            return "Cliente eliminado"
+        }else{
+            return "No se consigue el cliente"
+        }
+    },
     createClient: async (data) => {
         await Client.create(data)
         return "Creado con exito"

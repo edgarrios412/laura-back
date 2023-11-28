@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const clientRoutes = Router()
-const {getClientId, getClients, createClient, editClient, newEvolucion, newCompromiso, findConsen, newCotizacion, findCoti, getCoti} = require("../controllers/clientController")
+const {getClientId, getClients, createClient, editClient, newEvolucion, newCompromiso, findConsen, newCotizacion, findCoti, getCoti, deleteClient} = require("../controllers/clientController")
 
 clientRoutes.get("/:id", async (req,res) => {
     const {id} = req.params
@@ -20,6 +20,16 @@ clientRoutes.get("/:id", async (req,res) => {
     catch(error){
         console.log(error)
     }
+    }
+})
+
+clientRoutes.delete("/:id", async (req,res) => {
+    try{
+        const deleteClient = await deleteClient(req.params.id)
+        res.json(deleteClient)
+    }
+    catch(error){
+        console.log(error)
     }
 })
 
