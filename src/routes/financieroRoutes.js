@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const financieroRoutes = Router()
-const {getFinanza, newPay} = require("../controllers/financieroController")
+const {getFinanza, newPay, deletePay} = require("../controllers/financieroController")
 
 financieroRoutes.get("/", async (req,res) => {
     try{
@@ -25,8 +25,14 @@ financieroRoutes.put("/", (req,res) => {
     res.json({users:"Edita un ingreso"})
 })
 
-financieroRoutes.delete("/", (req,res) => {
-    res.json({users:"Elimina un ingreso"})
+financieroRoutes.delete("/:id", async (req,res) => {
+    try{
+        const newPago = await deletePay(req.params.id)
+        res.json({status:newPago})
+        }
+        catch(error){
+            console.log(error)
+        }
 })
 
 module.exports = financieroRoutes

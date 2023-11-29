@@ -8,5 +8,12 @@ module.exports = {
     newPay: async (data) => {
         await Financiero.create(data)
         return "Creado exitosamente"
+    },
+    deletePay: async (id) => {
+        const pay = await Financiero.findByPk(id)
+        if(pay){
+            await pay.destroy()
+            return "Eliminado"
+        }else return "No encontrado"
     }
 }
