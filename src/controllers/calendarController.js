@@ -27,5 +27,18 @@ module.exports = {
             return "Eliminado exitosamente"
         }
         return "Date no encontrada"
+    },
+    putDate: async (data) => {
+        const date = await Calendar.findOne({
+            where:{
+                id:data.id
+            }
+        })
+        if(date){
+            if(data.confirmada) date.confirmada = data.confirmada
+            await date.save()
+            return "Eliminado exitosamente"
+        }
+        return "Date no encontrada"
     }
 }

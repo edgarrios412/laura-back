@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const calendarRoutes = Router()
-const {getDates, postDate, deleteDate, getDatesById} = require("../controllers/calendarController")
+const {getDates, postDate, deleteDate, getDatesById, putDate} = require("../controllers/calendarController")
 
 calendarRoutes.get("/:id", async (req,res) => {
     try{
@@ -34,6 +34,16 @@ catch(error){
 calendarRoutes.delete("/:id", async (req,res) => {
     try{
     const delDate = await deleteDate(req.params.id)
+    res.json({dates:delDate})
+}
+catch(error){
+    console.log(error)
+}
+})
+
+calendarRoutes.put("/", async (req,res) => {
+    try{
+    const delDate = await putDate(req.body)
     res.json({dates:delDate})
 }
 catch(error){
