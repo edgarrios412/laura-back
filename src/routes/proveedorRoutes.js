@@ -1,5 +1,5 @@
 const {Router} = require("express")
-const { getProveedor, getProveedores, postProveedor } = require("../controllers/proveedorController")
+const { getProveedor, getProveedores, postProveedor , deleteProveedor} = require("../controllers/proveedorController")
 const proveedorRoutes = Router()
 
 proveedorRoutes.get("/:id", async (req,res) => {
@@ -21,8 +21,9 @@ proveedorRoutes.post("/", async (req,res) => {
 //     res.json({users:"Edita un evolucion"})
 // })
 
-// proveedorRoutes.delete("/", (req,res) => {
-//     res.json({users:"Elimina un evolucion"})
-// })
+proveedorRoutes.delete("/:id", (req,res) => {
+    const deleted = deleteProveedor(req.params.id)
+    res.json(deleted)
+})
 
 module.exports = proveedorRoutes
