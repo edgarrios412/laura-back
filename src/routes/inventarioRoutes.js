@@ -1,10 +1,19 @@
 const {Router} = require("express")
 const inventarioRoutes = Router()
-const {getItems, postItem, putItem} = require("../controllers/inventarioController")
+const {getItems, postItem, putItem, getItem} = require("../controllers/inventarioController")
 
 inventarioRoutes.get("/", async (req,res) => {
     try{
     const finanza = await getItems()
+    res.json(finanza)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+inventarioRoutes.get("/item/:id", async (req,res) => {
+    try{
+    const finanza = await getItem(req.params.id)
     res.json(finanza)
     }catch(error){
         console.log(error)
@@ -24,6 +33,16 @@ inventarioRoutes.post("/", async (req,res) => {
 inventarioRoutes.put("/", async (req,res) => {
     try{
         const newPago = await putItem(req.body)
+        res.json({status:newPago})
+        }
+        catch(error){
+            console.log(error)
+        }
+})
+
+inventarioRoutes.delete("/", async (req,res) => {
+    try{
+        const newPago = await deleteItem(req.body.id)
         res.json({status:newPago})
         }
         catch(error){
