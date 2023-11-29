@@ -25,6 +25,10 @@ module.exports = (sequelize) => {
     cantidad: {
         type: DataTypes.INTEGER,
         allowNull: true,
+      },
+      alerta: { 
+        type: DataTypes.INTEGER,
+        allowNull: true,
       }
   },{timestamps:false});
 };
