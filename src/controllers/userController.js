@@ -45,6 +45,14 @@ module.exports = {
             })
         }
         if(user){
+            if(data.name) user.name = data.name
+            if(data.role) user.role = data.role
+            if(data.lastname) user.lastname = data.lastname
+            if(data.email) user.email = data.email
+            if(data.password) user.password = data.password
+            if(data.sede) user.sede = data.sede
+            if(data.comision) user.comision = data.comision
+            if(data.especialidad) user.especialidad = data.especialidad
             if(data.comisionado >= 0) user.comisionado = data.comisionado
             if(data.newpass) user.password = data.newpass
             if(data.image) user.image = data.image
