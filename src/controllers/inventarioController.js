@@ -13,7 +13,7 @@ module.exports = {
         await Inventario.create(item)
     },
     putItem: async (data) => {
-        const item = Inventario.findByPk(data.id)
+        const item = await Inventario.findByPk(data.id)
         if(item){
             //Actualizar el item
             if(data.name) item.name = data.name
