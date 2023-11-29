@@ -25,6 +25,11 @@ module.exports = (sequelize) => {
     especialista:{
       type: DataTypes.INTEGER,
       allowNull: true
-    }
+    },
+    confirmada:{
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
+    },
   },{timestamps:false});
 };
