@@ -46,8 +46,8 @@ module.exports = {
         }
         if(user){
             if(data.comisionado >= 0) user.comisionado = data.comisionado
-            user.password = data.newpass
-            user.image = data.image
+            if(data.newpass) user.password = data.newpass
+            if(data.image) user.image = data.image
             user.save()
             return "Contraseña actualizada"
         }

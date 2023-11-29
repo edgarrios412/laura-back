@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const clientRoutes = Router()
-const {getClientId, getClients, createClient, editClient, newEvolucion, newCompromiso, findConsen, newCotizacion, findCoti, getCoti, deleteClient} = require("../controllers/clientController")
+const {getClientId, getClients, createClient, editClient, newEvolucion, newCompromiso, findConsen, newCotizacion, findCoti, getCoti, deleteClient, putClient} = require("../controllers/clientController")
 
 clientRoutes.get("/:id", async (req,res) => {
     const {id} = req.params
@@ -20,6 +20,16 @@ clientRoutes.get("/:id", async (req,res) => {
     catch(error){
         console.log(error)
     }
+    }
+})
+
+clientRoutes.put("/:id", async (req,res) => {
+    try{
+        const client = await putClient(req.body)
+        res.json(client)
+    }
+    catch(error){
+        console.log(error)
     }
 })
 

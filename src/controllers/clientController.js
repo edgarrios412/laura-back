@@ -78,5 +78,26 @@ module.exports = {
     getCoti: async () => {
         const consen = await Cotizacion.findAll({include:Client})
         return consen
-    }
+    },
+    putClient: async (data) => {
+        const client = await Client.findOne({
+                where:{
+                    id:data.id,
+                }
+            })
+        
+        if(client){
+            if(data.name) client.name = data.name
+            if(data.cedula) client.cedula = data.cedula
+            if(data.nacimiento) client.nacimiento = data.nacimiento
+            if(data.direccion) client.direccion = data.direccion
+            if(data.departamento) client.departamento = data.departamento
+            if(data.ciudad) client.ciudad = data.ciudad
+            if(data.celular) client.celular = data.celular
+            if(data.image) client.image = data.image
+            client.save()
+            return "Cliente actualizado"
+        }
+        return "Cliente no encontrado"
+    },
 }
