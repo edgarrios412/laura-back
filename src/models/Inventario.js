@@ -29,6 +29,10 @@ module.exports = (sequelize) => {
       alerta: { 
         type: DataTypes.INTEGER,
         allowNull: true,
+      },
+      costo:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
       }
   },{timestamps:false});
 };
