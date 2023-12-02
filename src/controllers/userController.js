@@ -15,10 +15,10 @@ module.exports = {
         })
         // console.log(user.lenght)
         if(user.length){
-            const token = jwt.sign({id:user[0].id, email:user[0].email, role:user[0].role,sede:user[0].sede, name:user[0].name,lastname:user[0].lastname, image:user[0].image}, "natalie")
+            const token = jwt.sign({id:user[0].id, email:user[0].email, comisionado:user[0].comisionado, role:user[0].role,sede:user[0].sede, name:user[0].name,lastname:user[0].lastname, image:user[0].image}, "natalie")
             // console.log(user)
             // console.log(token)
-            if(user.length) return {status:true, token:token, user:{id:user[0].id, email:user[0].email,sede:user[0].sede, role:user[0].role, name:user[0].name,lastname:user[0].lastname, image:user[0].image}}
+            if(user.length) return {status:true, token:token, user:{id:user[0].id, comisionado:user[0].comisionado, email:user[0].email,sede:user[0].sede, role:user[0].role, name:user[0].name,lastname:user[0].lastname, image:user[0].image}}
         }
         return {status:false}
     },
