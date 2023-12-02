@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
       autoIncrement:true,
     },
     procedimiento: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.STRING,
       allowNull: true,
     },
     title: {
