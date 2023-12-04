@@ -23,7 +23,7 @@ module.exports = (sequelize) => {
       allowNull: true,
     },
     tipo: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       // allowNull: true,
     },
     comprobante:{
