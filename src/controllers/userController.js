@@ -82,6 +82,13 @@ module.exports = {
         const cate = await Categoria.findAll()
         return cate
     },
+    delCate: async (id) => {
+        const cate = await Categoria.findByPk(id)
+        if(cate){
+            await cate.destroy()
+            return "Eliminado"
+        } else return "No encontrado"
+    },
     getProce: async () => {
         const cate = await Procedimientos.findAll()
         return cate

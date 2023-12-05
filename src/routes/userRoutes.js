@@ -83,6 +83,16 @@ userRoutes.post("/categoria", async (req,res) => {
     }
 })
 
+userRoutes.delete("/categoria", async (req,res) => {
+    try{
+    const user = await delCate(req.body.id)
+    res.json({status:user})
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
 userRoutes.get("/categoria", async (req,res) => {
     try{
     const cate = await getCate()
