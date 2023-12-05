@@ -2,7 +2,7 @@ const {Router} = require("express")
 const userRoutes = Router()
 const {newUser, verifyUser, authUser, putUser, getUsers, deleteUser, newCate, getCate, getProce, postProce, getUserById, delCate} = require("../controllers/userController")
 
-userRoutes.delete("/categoria/:id", async (req,res) => {
+userRoutes.delete("/categoria/id/:id", async (req,res) => {
     console.log(req.params.id)
     try{
     const user = await delCate(req.params.id)
