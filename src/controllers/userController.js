@@ -84,7 +84,7 @@ module.exports = {
     },
     delCate: async (id) => {
         console.log(id)
-        const cate = await Categoria.findByPk(id)
+        const cate = await Categoria.findOne({where:{id:id}})
         if(cate){
             await cate.destroy()
             return "Eliminado"
