@@ -1,4 +1,5 @@
 const {Router} = require("express")
+const {getRecordatorios, getRecordatorio, postRecordatorio, deleteRecordatorio, } = require("../controllers/recordatorioController")
 const recordatorioRoutes = Router()
 
 recordatorioRoutes.get("/:id", async (req,res) => {
