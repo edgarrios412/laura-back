@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const userRoutes = Router()
-const {newUser, verifyUser, authUser, putUser, getUsers, deleteUser, newCate, getCate, getProce, postProce, getUserById} = require("../controllers/userController")
+const {newUser, verifyUser, authUser, putUser, getUsers, deleteUser, newCate, getCate, getProce, postProce, getUserById, delCate} = require("../controllers/userController")
 
 userRoutes.get("/", async (req,res) => {
     try{
