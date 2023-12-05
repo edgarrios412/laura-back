@@ -90,7 +90,7 @@ module.exports = {
             return "Eliminado"
         } else return "No encontrado"
     },
-    delCate: async (id) => {
+    delProce: async (id) => {
         console.log(id)
         const cate = await Procedimientos.findByPk(id)
         if(cate){
