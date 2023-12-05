@@ -84,6 +84,7 @@ userRoutes.post("/categoria", async (req,res) => {
 })
 
 userRoutes.delete("/categoria/:id", async (req,res) => {
+    console.log(req.params.id)
     try{
     const user = await delCate(req.params.id)
     res.json({status:user})
