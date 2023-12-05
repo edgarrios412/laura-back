@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const userRoutes = Router()
-const {newUser, verifyUser, authUser, putUser, getUsers, deleteUser, newCate, getCate, getProce, postProce, getUserById, delCate} = require("../controllers/userController")
+const {newUser, verifyUser, authUser, putUser, getUsers, deleteUser, newCate, getCate, getProce, postProce, getUserById, delCate, delProce} = require("../controllers/userController")
 
 userRoutes.delete("/cate/id/:id", async (req,res) => {
     console.log(req.params.id)
@@ -108,6 +108,16 @@ userRoutes.post("/procedimientos", async (req,res) => {
     try{
     const user = await postProce(req.body)
     res.json({status:user})
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
+userRoutes.delete("/proce/id/:id", async (req,res) => {
+    try{
+    const cate = await delProce(req.params.id)
+    res.json(cate)
     }
     catch(error){
         console.log(error)
