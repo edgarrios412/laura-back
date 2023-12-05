@@ -10,6 +10,11 @@ module.exports = (sequelize) => {
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
+    rut: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue:""
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: true,
