@@ -83,6 +83,7 @@ module.exports = {
         return cate
     },
     delCate: async (id) => {
+        console.log(id)
         const cate = await Categoria.findByPk(id)
         if(cate){
             await cate.destroy()
