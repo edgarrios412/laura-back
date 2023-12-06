@@ -40,9 +40,9 @@ inventarioRoutes.put("/", async (req,res) => {
         }
 })
 
-inventarioRoutes.delete("/", async (req,res) => {
+inventarioRoutes.delete("/delete/:id", async (req,res) => {
     try{
-        const newPago = await deleteItem(req.body.id)
+        const newPago = await deleteItem(req.params.id)
         res.json({status:newPago})
         }
         catch(error){
