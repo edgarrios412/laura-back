@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const inventarioRoutes = Router()
-const {getItems, postItem, putItem, getItem} = require("../controllers/inventarioController")
+const {getItems, postItem, putItem, getItem, deleteItem} = require("../controllers/inventarioController")
 
 inventarioRoutes.get("/", async (req,res) => {
     try{
