@@ -42,6 +42,10 @@ module.exports = (sequelize) => {
     factura:{
       type: DataTypes.BOOLEAN,
       allowNull: true,
+    },
+    sede:{
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },{timestamps:false});
 };
