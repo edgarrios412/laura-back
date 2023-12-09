@@ -1,7 +1,7 @@
 const {Registro} = require("../db")
 
 module.exports = {
-    getRegistro: async () => {
+    getRegistros: async () => {
     const proveedor = await Registro.findAll()
     return proveedor
     },
