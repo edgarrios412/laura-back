@@ -16,4 +16,4 @@ conn.sync({alter:true}).then(() => {
     app.listen(3002, () => {
         console.log("Servidor en linea en el puerto 3002")
     })
-})
+}, (error) => console.log(error))
