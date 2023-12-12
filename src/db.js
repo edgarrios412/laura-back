@@ -5,10 +5,19 @@ const path = require('path');
 const {DB} = process.env;
 
 const sequelize = new Sequelize(DB+`?sslmode=require`, {
-    logging: console.log, // set to console.log to see the raw SQL queries
+    logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
     dialect: 'postgres',
     protocol: 'postgres',
+  });
+
+  sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Conexion establecida con exito');
+  })
+  .catch(err => {
+    console.error('Ha ocurrido un error:', err);
   });
 
   const basename = path.basename(__filename);
