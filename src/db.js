@@ -5,7 +5,7 @@ const path = require('path');
 const {DB} = process.env;
 
 const sequelize = new Sequelize(DB+`?sslmode=require`, {
-    logging: false, // set to console.log to see the raw SQL queries
+    logging: console.log, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
     dialect: 'postgres',
     protocol: 'postgres',
