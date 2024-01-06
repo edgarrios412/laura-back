@@ -22,6 +22,10 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      sede: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
     cantidad: {
         type: DataTypes.INTEGER,
         allowNull: true,
