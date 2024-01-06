@@ -36,6 +36,8 @@ module.exports = {
         })
         if(date){
             if(data.confirmada) date.confirmada = data.confirmada
+            if(data.start) date.start = data.start
+            if(data.end) date.end = data.end
             await date.save()
             return "Eliminado exitosamente"
         }
